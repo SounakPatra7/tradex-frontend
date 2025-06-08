@@ -14,7 +14,7 @@ const EditProfile = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/auth/profile", {
+        const res = await axios.get("https://tradex-node.onrender.com/api/auth/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log(res.data);
@@ -46,7 +46,7 @@ const EditProfile = () => {
         formData.append("image", imageFile);
       }
 
-      await axios.put("http://localhost:5000/api/auth/profile", formData, {
+      await axios.put("https://tradex-node.onrender.com/api/auth/profile", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
@@ -73,7 +73,7 @@ const EditProfile = () => {
               src={
                 preview ||
                 (user.image
-                  ? `http://localhost:5000/api/auth/uploads/${user.image}`
+                  ? `https://tradex-node.onrender.com/api/auth/uploads/${user.image}`
                   : "/default-profile.png")
               }
               alt="Profile"
