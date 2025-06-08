@@ -12,7 +12,7 @@ const TransactionHistory = () => {
     const fetchTransactions = async () => {
       try {
         // Fetch all transactions
-        const response = await axios.get('http://localhost:5000/api/auth/transactions', {
+        const response = await axios.get('https://tradex-node.onrender.com/api/auth/transactions', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
