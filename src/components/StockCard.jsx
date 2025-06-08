@@ -95,7 +95,7 @@ const StockCard = () => {
   useEffect(() => {
     const fetchStockDetails = async () => {
       try {
-        const res = await axios.post('http://localhost:5000/api/tiingo/stocks', {
+        const res = await axios.post('https://tradex-node.onrender.com/api/tiingo/stocks', {
           symbols: [symbol]
         });
         setStock(res.data.data[0]); // Assuming this data contains symbol and name
