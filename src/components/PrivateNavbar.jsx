@@ -24,7 +24,7 @@ const PrivateNavbar = () => {
       // Fetch profile data from the server when user is available
       const fetchProfileData = async () => {
         try {
-          const response = await axios.get("http://localhost:5000/api/auth/profile", {
+          const response = await axios.get("https://tradex-node.onrender.com/api/auth/profile", {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -70,7 +70,7 @@ const PrivateNavbar = () => {
   }
 
   const imageUrl = profile?.image
-    ? `http://localhost:5000/api/auth/uploads/${profile.image.replace(/\\/g, "/")}`
+    ? `https://tradex-node.onrender.com/api/auth/uploads/${profile.image.replace(/\\/g, "/")}`
     : "/default-profile.jpg";
 
   return (
