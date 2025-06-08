@@ -15,7 +15,7 @@ function Login() {
   const onSubmit = async (data) => {
   
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', data);
+      const response = await axios.post('https://tradex-node.onrender.com/api/auth/login', data);
       const { token } = response.data;
       if (token) {
         alert('Login successful!');
