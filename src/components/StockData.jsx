@@ -18,7 +18,7 @@ const StockData = () => {
   const fetchStocks = async () => {
     if (symbols.length > 0) {
       try {
-        const res = await axios.post('http://localhost:5000/api/tiingo/stocks', { symbols });
+        const res = await axios.post('https://tradex-node.onrender.com/api/tiingo/stocks', { symbols });
         setStocks(res.data.data || []); // Assuming backend responds with `data: [{...}]`
       } catch (err) {
         setError('Failed to fetch stock data');
@@ -32,7 +32,7 @@ const StockData = () => {
   useEffect(() => {
     const fetchSymbols = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/tiingo/stocks/symbols');
+        const res = await axios.get('https://tradex-node.onrender.com/api/tiingo/stocks/symbols');
         const extractedSymbols = res.data.stocks.map(stock => stock.symbol);
         setSymbols(extractedSymbols);
       } catch (err) {
