@@ -93,7 +93,7 @@ const Wallet = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/auth/profile', {
+        const response = await axios.get('https://tradex-node.onrender.com/api/auth/profile', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
@@ -124,7 +124,7 @@ const Wallet = () => {
   
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/auth/update-balance',
+        'https://tradex-node.onrender.com/api/auth/update-balance',
         {
           amount: parseFloat(depositAmount),
           type: 'deposit',
@@ -163,7 +163,7 @@ const Wallet = () => {
 
     try {
       await axios.post(
-        'http://localhost:5000/api/auth/update-balance',
+        'https://tradex-node.onrender.com/api/auth/update-balance',
         {
           amount: withdrawAmount,
           type: 'withdrawal',
